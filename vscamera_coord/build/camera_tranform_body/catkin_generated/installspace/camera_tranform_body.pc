@@ -1,0 +1,8 @@
+prefix=/home/yang/Vxense/AGV_use_ws/vscamera_coord/install
+
+Name: camera_tranform_body
+Description: Description of camera_tranform_body
+Version: 0.0.0
+Cflags: -I${prefix}/include -I/usr/include/eigen3
+Libs: -L${prefix}/lib -lcamera_tranform_body
+Requires: roscpp rospy std_msgs geometry_msgs

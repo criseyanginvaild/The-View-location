@@ -1,0 +1,8 @@
+prefix=/home/yang/Vxense/AGV_use_ws/vscamera_coord/install
+
+Name: world_coordinates
+Description: Description of world_coordinates
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
