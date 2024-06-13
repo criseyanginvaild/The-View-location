@@ -15,6 +15,7 @@
 
 #include <Eigen/Dense>
 #include <cstring>
+#include <signal.h>
 
 using namespace std;
 using namespace cv;
@@ -75,7 +76,7 @@ void on_MouseHandle(int event, int x, int y, int flags, void * userdata )
 	{
 		g_Pos.x = x;
 		g_Pos.y = y;	
-		std::cout << x  << " " << y << std::endl;	
+		//std::cout << x  << " " << y << std::endl;	
 		PrintPointCloudInfo(x,y,g_frameWith,data->pub);
 
 	}
@@ -87,7 +88,7 @@ void PrintPointCloudInfo(cv::Point2d rgb_point ,int width,ros::Publisher &pub_bo
     {
         int index = rgb_point.y * width + rgb_point.x;
 
-		std::cout << "index" << index << std::endl;
+		//std::cout << "index" << index << std::endl;
 
 		if (g_worldv[index].x && g_worldv[index].y && g_worldv[index].z != 0)
 		{
@@ -99,10 +100,10 @@ void PrintPointCloudInfo(cv::Point2d rgb_point ,int width,ros::Publisher &pub_bo
 
 			pub.publish(msg);
 
-			std::cout << "Point Cloud at (" << rgb_point.x << ", " << rgb_point.y << "): ("
-				<< g_worldv[index].x << ", " 
-				<< g_worldv[index].y << ", " 
-				<< g_worldv[index].z << ")" << endl; 
+			// std::cout << "Point Cloud at (" << rgb_point.x << ", " << rgb_point.y << "): ("
+			// 	<< g_worldv[index].x << ", " 
+			// 	<< g_worldv[index].y << ", " 
+			// 	<< g_worldv[index].z << ")" << endl; 
 		}
 		else
 		{
@@ -128,10 +129,10 @@ void PrintPointCloudInfo(int x, int y, int width, ros::Publisher &pub)
 
 		pub.publish(msg);
 
-        std::cout << "Point Cloud at (" << x << ", " << y << "): ("
-             << g_worldv[index].x << ", " 
-             << g_worldv[index].y << ", " 
-             << g_worldv[index].z << ")" << endl; 
+        // std::cout << "Point Cloud at (" << x << ", " << y << "): ("
+        //      << g_worldv[index].x << ", " 
+        //      << g_worldv[index].y << ", " 
+        //      << g_worldv[index].z << ")" << endl; 
     }
     else
     {
@@ -150,7 +151,7 @@ void clickedPointCallback(const geometry_msgs::PointStamped::ConstPtr& msg )
 	// printMatrix(trs);	
 	// printMatrix(rot);
 	
-	std::cout << rgb_point_mat << endl;
+	//std::cout << rgb_point_mat << endl;
 	
 	// 确保在矩阵乘法之前检查矩阵的维度
     if (rot.cols == rgb_point_mat.rows && trs.rows == rot.rows)
@@ -181,11 +182,21 @@ void printMatrix(const cv::Mat& mat) {
     }
 }
 
+void signalHandler(int signum) {
+	std::cout << "Interrupt signal (" << signum << ") received.\n";
+	// cleanup and close up stuff here  
+	// terminate program  
+	exit(signum);
+}
+
 int main(int argc, char *argv[])
 {
 	// initialize the ROS system
 	ros::init(argc,argv,"point_cloud_publisher");
 	ros::NodeHandle nh;
+
+	signal(SIGINT, signalHandler);
+
 	pub = nh.advertise<std_msgs::String>("camera_coord_pos",1000);
 	pub_body = nh.advertise<std_msgs::String>("Car_BoC",1000);
 	image_transport::ImageTransport trc(nh);
