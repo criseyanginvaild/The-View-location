@@ -74,7 +74,8 @@ void on_MouseHandle(int event, int x, int y, int flags, void * userdata )
 	if (EVENT_LBUTTONDOWN == event)
 	{
 		g_Pos.x = x;
-		g_Pos.y = y;		
+		g_Pos.y = y;	
+		std::cout << x  << " " << y << std::endl;	
 		PrintPointCloudInfo(x,y,g_frameWith,data->pub);
 
 	}
@@ -82,24 +83,32 @@ void on_MouseHandle(int event, int x, int y, int flags, void * userdata )
 
 void PrintPointCloudInfo(cv::Point2d rgb_point ,int width,ros::Publisher &pub_body)
 {
-	if (g_transDepthv != NULL)
+	if (g_worldv != NULL)
     {
         int index = rgb_point.y * width + rgb_point.x;
 
 		std::cout << "index" << index << std::endl;
 
-		std::stringstream ss;
-		ss << g_transDepthv[index].x << " "<< g_transDepthv[index].y <<" "<< g_transDepthv[index].z ;
+		if (g_worldv[index].x && g_worldv[index].y && g_worldv[index].z != 0)
+		{
+			std::stringstream ss;
+			ss << g_worldv[index].x << " "<< g_worldv[index].y <<" "<< g_worldv[index].z ;
 
-		std_msgs::String msg;
-		msg.data = ss.str();
+			std_msgs::String msg;
+			msg.data = ss.str();
 
-		pub.publish(msg);
+			pub.publish(msg);
 
-        /* std::cout << "Point Cloud at (" << rgb_point.x << ", " << rgb_point.y << "): ("
-             << g_transDepthv[index].x << ", " 
-             << g_transDepthv[index].y << ", " 
-             << g_transDepthv[index].z << ")" << endl; */
+			std::cout << "Point Cloud at (" << rgb_point.x << ", " << rgb_point.y << "): ("
+				<< g_worldv[index].x << ", " 
+				<< g_worldv[index].y << ", " 
+				<< g_worldv[index].z << ")" << endl; 
+		}
+		else
+		{
+			std::cout << "Point Cloud data is not available." << endl;
+		}
+
 	}
 }
 
@@ -119,10 +128,10 @@ void PrintPointCloudInfo(int x, int y, int width, ros::Publisher &pub)
 
 		pub.publish(msg);
 
-        /* std::cout << "Point Cloud at (" << x << ", " << y << "): ("
+        std::cout << "Point Cloud at (" << x << ", " << y << "): ("
              << g_worldv[index].x << ", " 
              << g_worldv[index].y << ", " 
-             << g_worldv[index].z << ")" << endl; */
+             << g_worldv[index].z << ")" << endl; 
     }
     else
     {
@@ -138,21 +147,27 @@ void clickedPointCallback(const geometry_msgs::PointStamped::ConstPtr& msg )
 	cv::Mat rot(3,3,CV_64F,ce.rotation);
 	cv::Mat rgb_point_mat = (cv::Mat_<double>(3,1) << msg->point.x,msg->point.y,0);
 
-	printMatrix(trs);	
-	printMatrix(rot);
+	// printMatrix(trs);	
+	// printMatrix(rot);
 	
 	std::cout << rgb_point_mat << endl;
 	
-	cv::Mat depth_point = (rgb_point_mat * rot) + trs;
+	// 确保在矩阵乘法之前检查矩阵的维度
+    if (rot.cols == rgb_point_mat.rows && trs.rows == rot.rows)
+    {
+        //cv::Mat depth_point = rot * rgb_point_mat + trs;
 
-	std::cout << depth_point << endl;
+        //std::cout << depth_point << std::endl;
 
-	rgb_point.x = depth_point.at<double>(0,0);
+        rgb_point.x = rgb_point_mat.at<double>(0, 0);
+        rgb_point.y = rgb_point_mat.at<double>(1, 0);
 
-	rgb_point.y = depth_point.at<double>(1,0);
-
-
-	PrintPointCloudInfo(rgb_point,g_transDepthWith,pub_body);
+        PrintPointCloudInfo(rgb_point, g_transDepthWith, pub_body);
+    }
+    else
+    {
+        std::cerr << "矩阵维度不匹配，无法进行乘法运算！" << std::endl;
+    }
 
 }
 
@@ -174,8 +189,9 @@ int main(int argc, char *argv[])
 	pub = nh.advertise<std_msgs::String>("camera_coord_pos",1000);
 	pub_body = nh.advertise<std_msgs::String>("Car_BoC",1000);
 	image_transport::ImageTransport trc(nh);
-	image_transport::Publisher pub_color = trc.advertise("camera/color_image", 1);
-	
+	//image_transport::Publisher pub_color = trc.advertise("camera/color_image", 1);
+	image_transport::Publisher pub_transcolor = trc.advertise("camera/transcolor_image", 1);
+
 	ros::Subscriber clicked_point_sub = nh.subscribe("clicked_point",1000, &clickedPointCallback);
 
 	CallbackData data;
@@ -242,18 +258,18 @@ GET:
 	// const string depthImageWindow = "Depth Image";
     const string rgbImageWindow = "RGB Image";
 	// const string transformedDepthWindow = "TransformedDepth";
-	const string transformedColorwindow = "TransformedColor";
+	//const string transformedColorwindow = "TransformedColor";
 
 	// cv::namedWindow(depthImageWindow, cv::WINDOW_AUTOSIZE);
 	// cv::namedWindow(irImageWindow, cv::WINDOW_AUTOSIZE);
 	// cv::namedWindow(rgbImageWindow,cv::WINDOW_AUTOSIZE);
-	cv::namedWindow(transformedColorwindow,cv::WINDOW_AUTOSIZE);
+	//cv::namedWindow(transformedColorwindow,cv::WINDOW_AUTOSIZE);
 	// cv::namedWindow(transformedDepthWindow,cv::WINDOW_AUTOSIZE);
 
 	// setMouseCallback(depthImageWindow, on_MouseHandle, &data);
 	// setMouseCallback(irImageWindow, on_MouseHandle, &data);
-	setMouseCallback(rgbImageWindow, on_MouseHandle, &data);
-	setMouseCallback(transformedColorwindow,on_MouseHandle, &data);
+	//setMouseCallback(rgbImageWindow, on_MouseHandle, &data);
+	//setMouseCallback(transformedColorwindow,on_MouseHandle, &data);
 	// setMouseCallback(transformedDepthWindow,on_MouseHandle, &data);
 
 
@@ -412,9 +428,9 @@ GET:
                 putText(imageMat, text, Point(0, 15), FONT_HERSHEY_PLAIN, 1, Scalar(255, 255, 255));
 
 
-				sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(),"bgr8",imageMat).toImageMsg();
+				//sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(),"bgr8",imageMat).toImageMsg();
 
-				pub_color.publish(msg);
+				//pub_color.publish(msg);
 
 
 				/* cv::imshow(rgbImageWindow, imageMat); */
@@ -452,7 +468,9 @@ GET:
 				sprintf(text, "%.2f", fps);
 				putText(imageMat, text, Point(0, 15), FONT_HERSHEY_PLAIN, 1, Scalar(255, 255, 255));
 
-				cv::imshow(transformedColorwindow, imageMat);
+				sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", imageMat).toImageMsg();
+            	pub_transcolor.publish(msg);
+				//cv::imshow(transformedColorwindow, imageMat);
 			}
 			else
 			{

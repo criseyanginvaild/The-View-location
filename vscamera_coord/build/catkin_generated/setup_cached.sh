@@ -7,4 +7,9 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/yang/Vxense/AGV_use_ws/vscamera_coord/build'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/yang/Vxense/AGV_use_ws/vscamera_coord/src:$ROS_PACKAGE_PATH"
