@@ -24,8 +24,8 @@ VzDeviceInfo* g_pDeviceListInfo = NULL;
 VzDeviceHandle g_DeviceHandle = 0;
 Point g_Pos(-1, -1);
 
-Point g_TransPos(800, 600);
-int g_Slope = 7495;					//dpeth color_Max
+Point g_TransPos(800, 600); 
+int g_Slope = 7495;					//dpeth color_Max`
 
 bool g_IsSavePointCloud = false;
 static bool isTransformColorImgToDepthSensorEnabled = true;

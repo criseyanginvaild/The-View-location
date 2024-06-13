@@ -3,6 +3,7 @@
 #include <tf2_ros/transform_listener.h>
 #include <tf2_eigen/tf2_eigen.h>
 #include <Eigen/Dense>
+#include <vector>
 
 class CoordinatesTransformer {
 public:
@@ -12,6 +13,8 @@ public:
         bodyCoordsSub_ = nh_.subscribe("/body_coordinates", 1000, &CoordinatesTransformer::bodyCoordsCallback, this);
         // 发布转换后的世界坐标系下的坐标
         worldCoordsPub_ = nh_.advertise<geometry_msgs::PointStamped>("/world_coordinates", 1000);
+        //publish the averge coordinates
+        avgCoordsPub_ = nh_.advertise<geometry_msgs::PointStamped>("/avg_coordinates", 1000);
     }
 
     void bodyCoordsCallback(const geometry_msgs::PointStamped& msg) {
@@ -34,6 +37,14 @@ public:
             ptWorld.point.y = ptGrd[1];
             ptWorld.point.z = ptGrd[2];
             worldCoordsPub_.publish(ptWorld);
+
+            //exam whether receive the four coordinates
+            if (coordsBuffer_.size() == 4 )
+            {
+                publishAverageCoords();
+                coordsBuffer_.clear();
+            }
+           
             
             ROS_INFO_STREAM("ptWorld:" << "x:" <<ptWorld.point.x << ", y:" << ptWorld.point.y << ", z:" << ptWorld.point.z);
         } catch (tf2::TransformException &ex) {
@@ -42,11 +53,35 @@ public:
     }
 
 private:
+
+    void publishAverageCoords()
+    {
+
+        Eigen::Vector3f sum(0.0, 0.0, 0.0);
+        for (const auto& pt : coordsBuffer_) 
+        {
+            sum += Eigen::Vector3f(pt.x, pt.y, pt.z);
+        }
+        Eigen::Vector3f avg = sum / coordsBuffer_.size();
+
+        geometry_msgs::PointStamped avgPt;
+        avgPt.header.stamp = ros::Time::now();
+        avgPt.header.frame_id = "world_map";
+        avgPt.point.x = avg[0];
+        avgPt.point.y = avg[1];
+        avgPt.point.z = avg[2];
+        avgCoordsPub_.publish(avgPt);
+
+        ROS_INFO_STREAM("Average ptWorld: x:" << avgPt.point.x << ", y:" << avgPt.point.y << ", z:" << avgPt.point.z);
+    }
+
     ros::NodeHandle nh_;
     ros::Subscriber bodyCoordsSub_;
     ros::Publisher worldCoordsPub_;
+    ros::Publisher avgCoordsPub_;
     tf2_ros::Buffer tfBuffer_;
     tf2_ros::TransformListener tfListener_;
+    std::vector<geometry_msgs::Point> coordsBuffer_;
 };
 
 int main(int argc, char** argv) {
