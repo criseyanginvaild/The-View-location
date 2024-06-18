@@ -1,0 +1,9 @@
+sqlite3 -version
+ dpkg -l | grep sqlite3
+tar xzf sqlite-autoconf-3430200.tar.gz
+cd sqlite-autoconf-3430200/
+CFLAGS="-DSQLITE_ENABLE_COLUMN_METADATA=1" ./configure --prefix=/opt/libs-x86_64-Linux/sqlite/sqlite-3.43.2
+make
+
+sudo make install
+

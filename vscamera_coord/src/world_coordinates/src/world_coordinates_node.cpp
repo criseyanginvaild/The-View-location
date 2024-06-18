@@ -46,7 +46,7 @@ public:
             }
            
             
-            ROS_INFO_STREAM("ptWorld:" << "x:" <<ptWorld.point.x << ", y:" << ptWorld.point.y << ", z:" << ptWorld.point.z);
+            //ROS_INFO_STREAM("ptWorld:" << "x:" <<ptWorld.point.x << ", y:" << ptWorld.point.y << ", z:" << ptWorld.point.z);
         } catch (tf2::TransformException &ex) {
             ROS_WARN("%s", ex.what());
         }
@@ -72,7 +72,7 @@ private:
         avgPt.point.z = avg[2];
         avgCoordsPub_.publish(avgPt);
 
-        ROS_INFO_STREAM("Average ptWorld: x:" << avgPt.point.x << ", y:" << avgPt.point.y << ", z:" << avgPt.point.z);
+        //ROS_INFO_STREAM("Average ptWorld: x:" << avgPt.point.x << ", y:" << avgPt.point.y << ", z:" << avgPt.point.z);
     }
 
     ros::NodeHandle nh_;
