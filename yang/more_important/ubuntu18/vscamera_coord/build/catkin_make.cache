@@ -1,0 +1,2 @@
+camera_tranform_body:vxense_camera_coordposition:world_coordinates
+-DCATKIN_DEVEL_PREFIX=/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel -DCMAKE_INSTALL_PREFIX=/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install -G Unix Makefiles

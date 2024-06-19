@@ -89,7 +89,7 @@ void PrintPointCloudInfo(cv::Point2d rgb_point ,int width,ros::Publisher &pub)
         int index = rgb_point.y * width + rgb_point.x;
 
 		//std::cout << "index" << index << std::endl;
-		std::cout << width << std::endl;
+		//std::cout << width << std::endl;
 
 		std::stringstream ss;
 		ss << g_worldv[index].x << " "<< g_worldv[index].y <<" "<< g_worldv[index].z ;
