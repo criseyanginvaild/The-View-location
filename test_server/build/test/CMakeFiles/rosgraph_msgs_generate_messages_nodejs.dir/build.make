@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yang/Vxense/AGV_use_ws/test_server/src
+CMAKE_SOURCE_DIR = /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yang/Vxense/AGV_use_ws/test_server/build
+CMAKE_BINARY_DIR = /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build
 
 # Utility rule file for rosgraph_msgs_generate_messages_nodejs.
 
@@ -74,10 +74,10 @@ test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build: rosgraph_msgs_
 .PHONY : test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 
 test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/yang/Vxense/AGV_use_ws/test_server/build/test && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build/test && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 
 test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/yang/Vxense/AGV_use_ws/test_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yang/Vxense/AGV_use_ws/test_server/src /home/yang/Vxense/AGV_use_ws/test_server/src/test /home/yang/Vxense/AGV_use_ws/test_server/build /home/yang/Vxense/AGV_use_ws/test_server/build/test /home/yang/Vxense/AGV_use_ws/test_server/build/test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/src /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/src/test /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build/test /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build/test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
 

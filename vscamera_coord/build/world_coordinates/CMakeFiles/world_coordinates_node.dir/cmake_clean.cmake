@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel/lib/world_coordinates/world_coordinates_node"
-  "/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel/lib/world_coordinates/world_coordinates_node.pdb"
+  "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel/lib/world_coordinates/world_coordinates_node"
+  "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel/lib/world_coordinates/world_coordinates_node.pdb"
   "CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.o"
   "CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.o.d"
 )

@@ -11,7 +11,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/yang/Vxense/AGV_use_ws/test_server/install}
+: ${_CATKIN_SETUP_DIR:=/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/install}
 _SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
 unset _CATKIN_SETUP_DIR
 

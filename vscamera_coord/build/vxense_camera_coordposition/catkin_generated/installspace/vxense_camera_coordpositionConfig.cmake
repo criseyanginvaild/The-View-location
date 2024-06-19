@@ -67,14 +67,14 @@ set(vxense_camera_coordposition_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(vxense_camera_coordposition_SOURCE_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/src/vxense_camera_coordposition)
-  set(vxense_camera_coordposition_DEVEL_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/devel)
+  set(vxense_camera_coordposition_SOURCE_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/vxense_camera_coordposition)
+  set(vxense_camera_coordposition_DEVEL_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel)
   set(vxense_camera_coordposition_INSTALL_PREFIX "")
   set(vxense_camera_coordposition_PREFIX ${vxense_camera_coordposition_DEVEL_PREFIX})
 else()
   set(vxense_camera_coordposition_SOURCE_PREFIX "")
   set(vxense_camera_coordposition_DEVEL_PREFIX "")
-  set(vxense_camera_coordposition_INSTALL_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/install)
+  set(vxense_camera_coordposition_INSTALL_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install)
   set(vxense_camera_coordposition_PREFIX ${vxense_camera_coordposition_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/yang/Vxense/AGV_use_ws/vscamera_coord/install/lib;/home/yang/ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install/lib;/home/yang/ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

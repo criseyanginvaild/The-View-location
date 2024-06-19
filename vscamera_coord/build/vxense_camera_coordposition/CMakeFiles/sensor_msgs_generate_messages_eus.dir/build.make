@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yang/Vxense/AGV_use_ws/vscamera_coord/src
+CMAKE_SOURCE_DIR = /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yang/Vxense/AGV_use_ws/vscamera_coord/build
+CMAKE_BINARY_DIR = /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build
 
 # Utility rule file for sensor_msgs_generate_messages_eus.
 
@@ -74,10 +74,10 @@ vxense_camera_coordposition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/bui
 .PHONY : vxense_camera_coordposition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 
 vxense_camera_coordposition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build/vxense_camera_coordposition && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/vxense_camera_coordposition && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : vxense_camera_coordposition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 
 vxense_camera_coordposition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yang/Vxense/AGV_use_ws/vscamera_coord/src /home/yang/Vxense/AGV_use_ws/vscamera_coord/src/vxense_camera_coordposition /home/yang/Vxense/AGV_use_ws/vscamera_coord/build /home/yang/Vxense/AGV_use_ws/vscamera_coord/build/vxense_camera_coordposition /home/yang/Vxense/AGV_use_ws/vscamera_coord/build/vxense_camera_coordposition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/vxense_camera_coordposition /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/vxense_camera_coordposition /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/vxense_camera_coordposition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : vxense_camera_coordposition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
 

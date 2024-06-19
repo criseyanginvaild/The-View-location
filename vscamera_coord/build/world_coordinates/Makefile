@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yang/Vxense/AGV_use_ws/vscamera_coord/src
+CMAKE_SOURCE_DIR = /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yang/Vxense/AGV_use_ws/vscamera_coord/build
+CMAKE_BINARY_DIR = /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yang/Vxense/AGV_use_ws/vscamera_coord/build/CMakeFiles /home/yang/Vxense/AGV_use_ws/vscamera_coord/build/world_coordinates//CMakeFiles/progress.marks
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yang/Vxense/AGV_use_ws/vscamera_coord/build/CMakeFiles 0
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/CMakeFiles /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/world_coordinates//CMakeFiles/progress.marks
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/clean
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,22 +158,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/preinstall
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/preinstall
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 world_coordinates/CMakeFiles/world_coordinates_node.dir/rule:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/CMakeFiles/world_coordinates_node.dir/rule
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 world_coordinates/CMakeFiles/world_coordinates_node.dir/rule
 .PHONY : world_coordinates/CMakeFiles/world_coordinates_node.dir/rule
 
 # Convenience name for target.
@@ -182,7 +182,7 @@ world_coordinates_node: world_coordinates/CMakeFiles/world_coordinates_node.dir/
 
 # fast build rule for target.
 world_coordinates_node/fast:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f world_coordinates/CMakeFiles/world_coordinates_node.dir/build.make world_coordinates/CMakeFiles/world_coordinates_node.dir/build
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f world_coordinates/CMakeFiles/world_coordinates_node.dir/build.make world_coordinates/CMakeFiles/world_coordinates_node.dir/build
 .PHONY : world_coordinates_node/fast
 
 src/world_coordinates_node.o: src/world_coordinates_node.cpp.o
@@ -190,7 +190,7 @@ src/world_coordinates_node.o: src/world_coordinates_node.cpp.o
 
 # target to build an object file
 src/world_coordinates_node.cpp.o:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f world_coordinates/CMakeFiles/world_coordinates_node.dir/build.make world_coordinates/CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.o
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f world_coordinates/CMakeFiles/world_coordinates_node.dir/build.make world_coordinates/CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.o
 .PHONY : src/world_coordinates_node.cpp.o
 
 src/world_coordinates_node.i: src/world_coordinates_node.cpp.i
@@ -198,7 +198,7 @@ src/world_coordinates_node.i: src/world_coordinates_node.cpp.i
 
 # target to preprocess a source file
 src/world_coordinates_node.cpp.i:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f world_coordinates/CMakeFiles/world_coordinates_node.dir/build.make world_coordinates/CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.i
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f world_coordinates/CMakeFiles/world_coordinates_node.dir/build.make world_coordinates/CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.i
 .PHONY : src/world_coordinates_node.cpp.i
 
 src/world_coordinates_node.s: src/world_coordinates_node.cpp.s
@@ -206,7 +206,7 @@ src/world_coordinates_node.s: src/world_coordinates_node.cpp.s
 
 # target to generate assembly for a file
 src/world_coordinates_node.cpp.s:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f world_coordinates/CMakeFiles/world_coordinates_node.dir/build.make world_coordinates/CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.s
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(MAKE) $(MAKESILENT) -f world_coordinates/CMakeFiles/world_coordinates_node.dir/build.make world_coordinates/CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.s
 .PHONY : src/world_coordinates_node.cpp.s
 
 # Help Target
@@ -237,6 +237,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/yang/Vxense/AGV_use_ws/vscamera_coord/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

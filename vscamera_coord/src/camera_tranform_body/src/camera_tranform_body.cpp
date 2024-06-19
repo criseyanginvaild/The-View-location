@@ -51,9 +51,10 @@ public:
 
             Eigen::Vector3d point_camera(x/1000, z/1000, -y/1000);
 
-
-
             Eigen::Vector3d point_body = rotationMatrix * point_camera + translationVector;
+
+            std::cout <<  rotationMatrix << std::endl;
+            std::cout <<  translationVector << std::endl;
 
             geometry_msgs::PointStamped point_body_msg;
             point_body_msg.header.stamp = ros::Time::now();
@@ -62,7 +63,11 @@ public:
             point_body_msg.point.y = point_body.x();
             point_body_msg.point.z = point_body.z();
 
-            //std::cout << "body point left hand" <<point_body.x() << point_body.y() <<  std::endl;
+            std::cout << "please add those data to your fork_vehicle.yaml file" << 
+            " " << -point_body.x() << " " << -point_body.y() << " " << -point_body.z() << std::endl;
+
+            // std::cout << "body_coordinate can get the the camera point : " << point_body_msg.point.x
+            // << " " << point_body_msg.point.y << " " << point_body_msg.point.z  <<  std::endl;
 
             body_coordinates_pub_.publish(point_body_msg);
     }

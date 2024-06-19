@@ -1,4 +1,4 @@
-prefix=/home/yang/Vxense/AGV_use_ws/test_server/install
+prefix=/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/install
 
 Name: test
 Description: Description of test

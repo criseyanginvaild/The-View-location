@@ -67,14 +67,14 @@ set(world_coordinates_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(world_coordinates_SOURCE_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/src/world_coordinates)
-  set(world_coordinates_DEVEL_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/devel)
+  set(world_coordinates_SOURCE_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/world_coordinates)
+  set(world_coordinates_DEVEL_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel)
   set(world_coordinates_INSTALL_PREFIX "")
   set(world_coordinates_PREFIX ${world_coordinates_DEVEL_PREFIX})
 else()
   set(world_coordinates_SOURCE_PREFIX "")
   set(world_coordinates_DEVEL_PREFIX "")
-  set(world_coordinates_INSTALL_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/install)
+  set(world_coordinates_INSTALL_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install)
   set(world_coordinates_PREFIX ${world_coordinates_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/yang/Vxense/AGV_use_ws/vscamera_coord/install/lib;/home/yang/ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install/lib;/home/yang/ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

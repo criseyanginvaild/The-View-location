@@ -1,8 +1,8 @@
-# Install script for directory: /home/yang/Vxense/AGV_use_ws/vscamera_coord/src/vxense_camera_coordposition
+# Install script for directory: /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/vxense_camera_coordposition
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/vscamera_coord/install")
+  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,17 +43,17 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/vscamera_coord/build/vxense_camera_coordposition/catkin_generated/installspace/vxense_camera_coordposition.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/vxense_camera_coordposition/catkin_generated/installspace/vxense_camera_coordposition.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/vxense_camera_coordposition/cmake" TYPE FILE FILES
-    "/home/yang/Vxense/AGV_use_ws/vscamera_coord/build/vxense_camera_coordposition/catkin_generated/installspace/vxense_camera_coordpositionConfig.cmake"
-    "/home/yang/Vxense/AGV_use_ws/vscamera_coord/build/vxense_camera_coordposition/catkin_generated/installspace/vxense_camera_coordpositionConfig-version.cmake"
+    "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/vxense_camera_coordposition/catkin_generated/installspace/vxense_camera_coordpositionConfig.cmake"
+    "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/vxense_camera_coordposition/catkin_generated/installspace/vxense_camera_coordpositionConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/vxense_camera_coordposition" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/vscamera_coord/src/vxense_camera_coordposition/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/vxense_camera_coordposition" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/vxense_camera_coordposition/package.xml")
 endif()
 

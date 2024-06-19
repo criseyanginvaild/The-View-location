@@ -1,8 +1,8 @@
-prefix=/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel
+prefix=/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel
 
 Name: camera_tranform_body
 Description: Description of camera_tranform_body
 Version: 0.0.0
-Cflags: -I/home/yang/Vxense/AGV_use_ws/vscamera_coord/src/camera_tranform_body/include -I/usr/include/eigen3
+Cflags: -I/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/camera_tranform_body/include -I/usr/include/eigen3
 Libs: -L${prefix}/lib -lcamera_tranform_body
 Requires: roscpp rospy std_msgs geometry_msgs

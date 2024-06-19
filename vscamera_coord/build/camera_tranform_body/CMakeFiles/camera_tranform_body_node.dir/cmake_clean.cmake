@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel/lib/camera_tranform_body/camera_tranform_body_node"
-  "/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel/lib/camera_tranform_body/camera_tranform_body_node.pdb"
+  "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel/lib/camera_tranform_body/camera_tranform_body_node"
+  "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel/lib/camera_tranform_body/camera_tranform_body_node.pdb"
   "CMakeFiles/camera_tranform_body_node.dir/src/camera_tranform_body.cpp.o"
   "CMakeFiles/camera_tranform_body_node.dir/src/camera_tranform_body.cpp.o.d"
 )

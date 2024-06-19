@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/yang/Vxense/AGV_use_ws/vscamera_coord/src/vxense_camera_coordposition/src/FrameViewer.cpp" "vxense_camera_coordposition/CMakeFiles/vxense_camera_coordposition_node.dir/src/FrameViewer.cpp.o" "gcc" "vxense_camera_coordposition/CMakeFiles/vxense_camera_coordposition_node.dir/src/FrameViewer.cpp.o.d"
+  "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/vxense_camera_coordposition/src/FrameViewer.cpp" "vxense_camera_coordposition/CMakeFiles/vxense_camera_coordposition_node.dir/src/FrameViewer.cpp.o" "gcc" "vxense_camera_coordposition/CMakeFiles/vxense_camera_coordposition_node.dir/src/FrameViewer.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

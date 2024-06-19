@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/vscamera_coord/install")
+  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

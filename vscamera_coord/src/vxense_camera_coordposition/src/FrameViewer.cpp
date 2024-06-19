@@ -54,7 +54,7 @@ image_geometry::PinholeCameraModel cam_model;
 
 
 ros::Publisher pub;
-ros::Publisher pub_body;
+//ros::Publisher pub_body;
 
 
 
@@ -82,35 +82,32 @@ void on_MouseHandle(int event, int x, int y, int flags, void * userdata )
 	}
 }
 
-void PrintPointCloudInfo(cv::Point2d rgb_point ,int width,ros::Publisher &pub_body)
+void PrintPointCloudInfo(cv::Point2d rgb_point ,int width,ros::Publisher &pub)
 {
 	if (g_worldv != NULL)
     {
         int index = rgb_point.y * width + rgb_point.x;
 
 		//std::cout << "index" << index << std::endl;
+		//std::cout << width << std::endl;
 
-		if (g_worldv[index].x && g_worldv[index].y && g_worldv[index].z != 0)
-		{
-			std::stringstream ss;
-			ss << g_worldv[index].x << " "<< g_worldv[index].y <<" "<< g_worldv[index].z ;
+		std::stringstream ss;
+		ss << g_worldv[index].x << " "<< g_worldv[index].y <<" "<< g_worldv[index].z ;
 
-			std_msgs::String msg;
-			msg.data = ss.str();
+		std_msgs::String msg;
+		msg.data = ss.str();
 
-			pub.publish(msg);
+		pub.publish(msg);
 
-			// std::cout << "Point Cloud at (" << rgb_point.x << ", " << rgb_point.y << "): ("
-			// 	<< g_worldv[index].x << ", " 
-			// 	<< g_worldv[index].y << ", " 
-			// 	<< g_worldv[index].z << ")" << endl; 
-		}
-		else
+		// std::cout << "Point Cloud at (" << rgb_point.x << ", " << rgb_point.y << "): ("
+		// 	<< g_worldv[index].x << ", " 
+		// 	<< g_worldv[index].y << ", " 
+		// 	<< g_worldv[index].z << ")" << endl; 
+	}
+	else
 		{
 			std::cout << "Point Cloud data is not available." << endl;
 		}
-
-	}
 }
 
 
@@ -163,7 +160,9 @@ void clickedPointCallback(const geometry_msgs::PointStamped::ConstPtr& msg )
         rgb_point.x = rgb_point_mat.at<double>(0, 0);
         rgb_point.y = rgb_point_mat.at<double>(1, 0);
 
-        PrintPointCloudInfo(rgb_point, g_transDepthWith, pub_body);
+		//std::cout << rgb_point.x <<  " " << rgb_point.y << std:endl;
+
+        PrintPointCloudInfo(rgb_point, g_frameWith, pub);
     }
     else
     {
@@ -197,13 +196,13 @@ int main(int argc, char *argv[])
 
 	signal(SIGINT, signalHandler);
 
-	pub = nh.advertise<std_msgs::String>("camera_coord_pos",1000);
-	pub_body = nh.advertise<std_msgs::String>("Car_BoC",1000);
+	pub = nh.advertise<std_msgs::String>("camera_coord_pos",5000);
+	//pub_body = nh.advertise<std_msgs::String>("Car_BoC",1000);
 	image_transport::ImageTransport trc(nh);
 	//image_transport::Publisher pub_color = trc.advertise("camera/color_image", 1);
 	image_transport::Publisher pub_transcolor = trc.advertise("camera/transcolor_image", 1);
 
-	ros::Subscriber clicked_point_sub = nh.subscribe("clicked_point",1000, &clickedPointCallback);
+	ros::Subscriber clicked_point_sub = nh.subscribe("clicked_point",50000, &clickedPointCallback);
 
 	CallbackData data;
 	data.pub = pub;
@@ -388,9 +387,9 @@ GET:
 		// 			g_transDepthv = new VzVector3f[transformedDepthFrame.width * transformedDepthFrame.height];
 		// 		}
 
-		// 		VZ_ConvertDepthFrameToPointCloudVector(g_DeviceHandle, &transformedDepthFrame, g_worldv);
+		 		VZ_ConvertDepthFrameToPointCloudVector(g_DeviceHandle, &transformedDepthFrame, g_worldv);
 
-		// 		g_transDepthWith = transformedDepthFrame.width;
+		 		g_transDepthWith = transformedDepthFrame.width;
 
 		// 		//Display the Depth Image
 		// 		// Opencv_Depth(g_Slope, transformedDepthFrame.height, transformedDepthFrame.width, transformedDepthFrame.pFrameData, imageMat,g_TransPos);
@@ -586,12 +585,12 @@ bool InitDevice(const int deviceCount)
 	}
 
 	VzConfidenceFilterParams confidenceFilterParams = { 0, true };
-	status = VZ_GetConfidenceFilterParams(g_DeviceHandle, &confidenceFilterParams);
-	if (status != VzReturnStatus::VzRetOK)
-	{
-		std::cout << "VZ_GetConfidenceFilterParams failed status:" << status << endl;
-		return -1;
-	}
+	// status = VZ_GetConfidenceFilterParams(g_DeviceHandle, &confidenceFilterParams);
+	// if (status != VzReturnStatus::VzRetOK)
+	// {
+	// 	std::cout << "VZ_GetConfidenceFilterParams failed status:" << status << endl;
+	// 	return -1;
+	// }
 
 	status = VZ_SetConfidenceFilterParams(g_DeviceHandle, confidenceFilterParams);
 
@@ -603,6 +602,8 @@ bool InitDevice(const int deviceCount)
 
     // cout << "sn  ==  " << g_pDeviceListInfo[0].serialNumber << endl;
 
+	VzSensorIntrinsicParameters cameraParameters;
+	status = VZ_GetSensorIntrinsicParameters(g_DeviceHandle, VzToFSensor, &cameraParameters);
 
     const int BufLen = 64;
 	char fw[BufLen] = { 0 };

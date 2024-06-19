@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/test_server/install")
+  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/yang/Vxense/AGV_use_ws/test_server/build/gtest/googletest/cmake_install.cmake")
+  include("/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build/gtest/googletest/cmake_install.cmake")
 
 endif()
 

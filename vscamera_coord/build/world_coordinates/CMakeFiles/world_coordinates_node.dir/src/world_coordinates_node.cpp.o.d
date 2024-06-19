@@ -1,5 +1,5 @@
 world_coordinates/CMakeFiles/world_coordinates_node.dir/src/world_coordinates_node.cpp.o: \
- /home/yang/Vxense/AGV_use_ws/vscamera_coord/src/world_coordinates/src/world_coordinates_node.cpp \
+ /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/world_coordinates/src/world_coordinates_node.cpp \
  /usr/include/stdc-predef.h /opt/ros/noetic/include/ros/ros.h \
  /opt/ros/noetic/include/ros/time.h \
  /opt/ros/noetic/include/ros/platform.h /usr/include/c++/9/stdlib.h \

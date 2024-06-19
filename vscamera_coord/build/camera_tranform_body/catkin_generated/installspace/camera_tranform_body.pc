@@ -1,4 +1,4 @@
-prefix=/home/yang/Vxense/AGV_use_ws/vscamera_coord/install
+prefix=/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install
 
 Name: camera_tranform_body
 Description: Description of camera_tranform_body

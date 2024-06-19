@@ -35,7 +35,10 @@ public:
             ptWorld.header.frame_id = "world_map";
             ptWorld.point.x = ptGrd[0];
             ptWorld.point.y = ptGrd[1];
-            ptWorld.point.z = ptGrd[2];
+            
+            //ptWorld.point.z = ptGrd[2];
+            ptWorld.point.z = 0;
+
             worldCoordsPub_.publish(ptWorld);
 
             //exam whether receive the four coordinates
@@ -69,10 +72,12 @@ private:
         avgPt.header.frame_id = "world_map";
         avgPt.point.x = avg[0];
         avgPt.point.y = avg[1];
+        
         avgPt.point.z = avg[2];
+        
         avgCoordsPub_.publish(avgPt);
 
-        //ROS_INFO_STREAM("Average ptWorld: x:" << avgPt.point.x << ", y:" << avgPt.point.y << ", z:" << avgPt.point.z);
+        ROS_INFO_STREAM("Average ptWorld: x:" << avgPt.point.x << ", y:" << avgPt.point.y << ", z:" << avgPt.point.z);
     }
 
     ros::NodeHandle nh_;

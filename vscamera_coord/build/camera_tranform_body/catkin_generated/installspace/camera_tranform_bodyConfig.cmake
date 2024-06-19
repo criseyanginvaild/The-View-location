@@ -67,14 +67,14 @@ set(camera_tranform_body_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(camera_tranform_body_SOURCE_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/src/camera_tranform_body)
-  set(camera_tranform_body_DEVEL_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/devel)
+  set(camera_tranform_body_SOURCE_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/camera_tranform_body)
+  set(camera_tranform_body_DEVEL_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel)
   set(camera_tranform_body_INSTALL_PREFIX "")
   set(camera_tranform_body_PREFIX ${camera_tranform_body_DEVEL_PREFIX})
 else()
   set(camera_tranform_body_SOURCE_PREFIX "")
   set(camera_tranform_body_DEVEL_PREFIX "")
-  set(camera_tranform_body_INSTALL_PREFIX /home/yang/Vxense/AGV_use_ws/vscamera_coord/install)
+  set(camera_tranform_body_INSTALL_PREFIX /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install)
   set(camera_tranform_body_PREFIX ${camera_tranform_body_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/yang/Vxense/AGV_use_ws/vscamera_coord/install/lib;/home/yang/ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install/lib;/home/yang/ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,4 +1,4 @@
-prefix=/home/yang/Vxense/AGV_use_ws/vscamera_coord/devel
+prefix=/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/devel
 
 Name: world_coordinates
 Description: Description of world_coordinates

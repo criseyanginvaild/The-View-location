@@ -1,8 +1,8 @@
-# Install script for directory: /home/yang/Vxense/AGV_use_ws/vscamera_coord/src/world_coordinates
+# Install script for directory: /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/world_coordinates
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/vscamera_coord/install")
+  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,17 +43,17 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/vscamera_coord/build/world_coordinates/catkin_generated/installspace/world_coordinates.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/world_coordinates/catkin_generated/installspace/world_coordinates.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/world_coordinates/cmake" TYPE FILE FILES
-    "/home/yang/Vxense/AGV_use_ws/vscamera_coord/build/world_coordinates/catkin_generated/installspace/world_coordinatesConfig.cmake"
-    "/home/yang/Vxense/AGV_use_ws/vscamera_coord/build/world_coordinates/catkin_generated/installspace/world_coordinatesConfig-version.cmake"
+    "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/world_coordinates/catkin_generated/installspace/world_coordinatesConfig.cmake"
+    "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build/world_coordinates/catkin_generated/installspace/world_coordinatesConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/world_coordinates" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/vscamera_coord/src/world_coordinates/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/world_coordinates" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/world_coordinates/package.xml")
 endif()
 

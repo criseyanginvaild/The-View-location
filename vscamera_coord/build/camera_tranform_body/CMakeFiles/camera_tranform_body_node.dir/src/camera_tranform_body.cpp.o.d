@@ -1,5 +1,5 @@
 camera_tranform_body/CMakeFiles/camera_tranform_body_node.dir/src/camera_tranform_body.cpp.o: \
- /home/yang/Vxense/AGV_use_ws/vscamera_coord/src/camera_tranform_body/src/camera_tranform_body.cpp \
+ /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/src/camera_tranform_body/src/camera_tranform_body.cpp \
  /usr/include/stdc-predef.h /opt/ros/noetic/include/ros/ros.h \
  /opt/ros/noetic/include/ros/time.h \
  /opt/ros/noetic/include/ros/platform.h /usr/include/c++/9/stdlib.h \

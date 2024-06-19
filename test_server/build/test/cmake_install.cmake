@@ -1,8 +1,8 @@
-# Install script for directory: /home/yang/Vxense/AGV_use_ws/test_server/src/test
+# Install script for directory: /home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/src/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/test_server/install")
+  set(CMAKE_INSTALL_PREFIX "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,17 +43,17 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/test_server/build/test/catkin_generated/installspace/test.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build/test/catkin_generated/installspace/test.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/test/cmake" TYPE FILE FILES
-    "/home/yang/Vxense/AGV_use_ws/test_server/build/test/catkin_generated/installspace/testConfig.cmake"
-    "/home/yang/Vxense/AGV_use_ws/test_server/build/test/catkin_generated/installspace/testConfig-version.cmake"
+    "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build/test/catkin_generated/installspace/testConfig.cmake"
+    "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/build/test/catkin_generated/installspace/testConfig-version.cmake"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/test" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/test_server/src/test/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/test" TYPE FILE FILES "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/test_server/src/test/package.xml")
 endif()
 

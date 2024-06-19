@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     pub = nh.advertise<geometry_msgs::PointStamped>("clicked_point", 1000);
 
     // Subscribe to input video feed and publish output
-    image_transport::Subscriber sub = it.subscribe("camera/transcolor_image", 1, imageCallback);
+    image_transport::Subscriber sub = it.subscribe("camera/transcolor_image", 50000, imageCallback);
     // OpenCV Window setup
     cv::namedWindow("View Image", cv::WINDOW_AUTOSIZE);
     cv::setMouseCallback("View Image", onMouse, NULL);

@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/googletest")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/yang/Vxense/AGV_use_ws/vscamera_coord/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/yang/Vxense/AGV_use_ws/yang/more_important/ubuntu18/vscamera_coord/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)
